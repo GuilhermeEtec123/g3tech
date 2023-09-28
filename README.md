@@ -35,7 +35,7 @@ Para usar <G3Tech>, siga estas etapas:
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
-https://github.com/GuilhermeEtec123/g3tech
-https://github.com/IcaroErom
-https://github.com/GabrielMinzon
-https://github.com/guizinpo
+* https://github.com/GuilhermeEtec123/g3tech
+* https://github.com/IcaroErom
+* https://github.com/GabrielMinzon
+* https://github.com/guizinpo
