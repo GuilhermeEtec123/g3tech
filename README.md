@@ -20,7 +20,6 @@ Para instalar o <G3Tech>, siga estas etapas:
 <git clone git@github.com:GuilhermeEtec123/g3tech.git>
 <npm install>
 <composer install>
-
 <php artisan migrate>
 ```
 
@@ -29,6 +28,7 @@ Para instalar o <G3Tech>, siga estas etapas:
 Para usar <G3Tech>, siga estas etapas:
 
 ```
+<npm run dev>
 <php artisan serve>
 <Entrar na url fornecida no terminal>
 ```
