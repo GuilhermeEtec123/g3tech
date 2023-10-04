@@ -5,6 +5,7 @@ use Illuminate\Support\ServiceProvider;
 
 return [
 
+    LaravelFrontendPresets\ArgonPreset\ArgonPresetServiceProvider::class,
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -184,5 +185,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
+
+    
 
 ];
