@@ -19,7 +19,9 @@ Para instalar o <G3Tech>, siga estas etapas:
 ```
 <git clone git@github.com:GuilhermeEtec123/g3tech.git](https://github.com/GuilhermeEtec123/g3tech.git>
 ```
+
 ##No VSCode
+
 ```
 <npm install>
 <npm audit>  
