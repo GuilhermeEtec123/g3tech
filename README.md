@@ -27,6 +27,7 @@ Para instalar o <G3Tech>, siga estas etapas:
 <npm audit>  
 <composer install>
 <php artisan migrate>
+<php artisan db:seed --class=UserSeeder>
 ```
 
 ## ☕ Usando <G3Tech>
