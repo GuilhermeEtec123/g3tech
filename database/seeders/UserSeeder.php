@@ -13,24 +13,28 @@ class UserSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-            'name' => 'Icaro Erom ',
+            'username' => 'Icaro Erom ',
             'email' => 'icaro.ponteciano@etec.sp.gov.br',
             'password' => Hash::make('123456789'),
+            'clientType' => '2'
 
             ], [
-                'name' => 'Guilherme Serafim',
+                'username' => 'Guilherme Serafim',
                 'email' => 'gserafim@gmail.com',
                 'password' => Hash::make('123456789'),
+                'clientType' => '1'
 
             ], [
-                'name' => 'Guilherme Teixeira',
+                'username' => 'Guilherme Teixeira',
                 'email' => 'gui.teixeira@gmail.com',
                 'password' => Hash::make('123456789'),
+                'clientType' => '2'
                 
             ], [
-                'name' => 'Gabriel Minzon',
+                'username' => 'Gabriel Minzon',
                 'email' => 'gabrielminzon@gmail.com',
                 'password' => Hash::make('123456789'),
+                'clientType' => '1'
             ]
         ]);
     }
