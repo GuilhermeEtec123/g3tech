@@ -248,6 +248,37 @@
                                     <td class="w-30">
                                         <div class="d-flex px-2 py-1 align-items-center">
                                             <div>
+                                                <img src="./img/icons/flags/DE.png" alt="Country flag">
+                                            </div>
+                                            <div class="ms-4">
+                                                <p class="text-xs font-weight-bold mb-0">Country:</p>
+                                                <h6 class="text-sm mb-0">Germany</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center">
+                                            <p class="text-xs font-weight-bold mb-0">Sales:</p>
+                                            <h6 class="text-sm mb-0">3.900</h6>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center">
+                                            <p class="text-xs font-weight-bold mb-0">Value:</p>
+                                            <h6 class="text-sm mb-0">$440,000</h6>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle text-sm">
+                                        <div class="col text-center">
+                                            <p class="text-xs font-weight-bold mb-0">Bounce:</p>
+                                            <h6 class="text-sm mb-0">40.22%</h6>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-30">
+                                        <div class="d-flex px-2 py-1 align-items-center">
+                                            <div>
                                                 <img src="./img/icons/flags/GB.png" alt="Country flag">
                                             </div>
                                             <div class="ms-4">
@@ -287,6 +318,7 @@
                                             </div>
                                         </div>
                                     </td>
+                                    
                                     <td>
                                         <div class="text-center">
                                             <p class="text-xs font-weight-bold mb-0">Sales:</p>

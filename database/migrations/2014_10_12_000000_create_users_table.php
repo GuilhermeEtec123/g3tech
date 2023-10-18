@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('postal')->nullable();
             $table->text('about')->nullable();
             $table->unsignedTinyInteger('clientType');
+            $table->unsignedTinyInteger('freelancerType');
             $table->rememberToken();
             $table->timestamps();
         });

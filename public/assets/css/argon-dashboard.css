@@ -3460,8 +3460,8 @@ textarea.form-control-lg {
 
 .btn-primary {
   color: #000;
-  background-color: #fb6340;
-  border-color: #fb6340;
+  background-color: #1919e6;
+  border-color: #1919e6;
 }
 .btn-primary:hover {
   color: #000;
@@ -9454,7 +9454,7 @@ textarea.form-control-lg {
 }
 
 .bg-primary {
-  background-color: #fb6340 !important;
+  background-color: #1919e6 !important;
 }
 
 .bg-secondary {
@@ -21144,7 +21144,7 @@ hr.horizontal.gray-light {
 .navbar-vertical.navbar-expand-xs .navbar-collapse {
   display: block;
   overflow: auto;
-  height: calc(100vh - 360px);
+  /* height: calc(100vh - 360px); */
 }
 .navbar-vertical.navbar-expand-xs > [class*=container] {
   flex-direction: column;
