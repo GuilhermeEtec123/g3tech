@@ -35,7 +35,12 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;  
 use App\Http\Controllers\ProjectController;           
-            
+
+//Modelo de rota com autenticação de usuario
+// Route::get('/profile', [UserProfileController::class, 'show'])
+//     ->middleware('App\Http\Middleware\ClientType:1') // Use o nome completo do middleware e o valor 1
+//     ->name('profile');
+
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
 	Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
