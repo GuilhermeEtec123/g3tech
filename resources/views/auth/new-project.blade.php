@@ -26,41 +26,42 @@
                             <form method="POST" action="{{ route('register.perform') }}">
                                 @csrf
                                 <div class="flex flex-col mb-3">
-                                <input type="text" name="username" class="form-control1" placeholder="Nome de Usuario" aria-label="Name" value="{{ old('username') }}" >
-                                    @error('username') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
+                                    <input type="text" name="nomeProjeto" class="form-control" placeholder="Nome do projeto" aria-label="Nome do projeto" value="{{ old('nomeProjeto') }}" >
+                                    @error('nomeProjeto') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
                                 </div>
                                 <div class="flex flex-col mb-3">
-                                    <input type="email" name="email" class="form-control" placeholder="Email" aria-label="Email" value="{{ old('email') }}" >
-                                    @error('email') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
+                                    <input type="number" name="qtdprestadoresProjeto" class="form-control" placeholder="Quantidade de prestadores" aria-label="Quantidade de prestadores" value="{{ old('qtdprestadoresProjeto') }}">
+                                    @error('qtdprestadoresProjeto') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
                                 </div>
                                 <div class="flex flex-col mb-3">
-                                    <input type="password" name="password" class="form-control" placeholder="Senha" aria-label="Password">
-                                    @error('password') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
+                                    <input type="number" name="valorOrcamento" class="form-control" placeholder="Valor do orçamento" aria-label="Valor do orçamento" value="{{ old('valorOrcamento') }}" >
+                                    @error('valorOrcamento') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
                                 </div>
                                 <div class="flex flex-col mb-3">
-                                    <input type="text" name="firstname" class="form-control" placeholder="Nome" aria-label="Name" value="{{ old('firstname') }}" >
-                                    @error('firstname') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
+                                    <input type="text" name="estadoOrcamento" class="form-control" placeholder="Estado do orçamento" aria-label="Estado do orçamento" value="{{ old('estadoOrcamento') }}" >
+                                    @error('estadoOrcamento') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
                                 </div>
                                 <div class="flex flex-col mb-3">
-                                    <input type="text" name="lastname" class="form-control" placeholder="Sobrenome" aria-label="Name" value="{{ old('lastname') }}" >
-                                    @error('lastname') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
+                                    <input type="date" name="dataentregaProjeto" class="form-control" placeholder="Data para a entrega do projeto" aria-label="Data para a entrega do projeto" value="{{ old('dataentregaProjeto') }}" >
+                                    @error('dataentregaProjeto') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
                                 </div>
                                 <div class="flex flex-col mb-3">
-                                    <input type="text" name="address" class="form-control" placeholder="Endereço" aria-label="Name" value="{{ old('address') }}" >
-                                    @error('address') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
+                                    <input type="text" name="statusEquipe" class="form-control" placeholder="Status da Equipe" aria-label="Status da Equipe" value="{{ old('statusEquipe') }}" >
+                                    @error('statusEquipe') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
                                 </div>
                                 <div class="flex flex-col mb-3">
-                                    <input type="text" name="city" class="form-control" placeholder="Cidade" aria-label="Name" value="{{ old('city') }}" >
-                                    @error('city') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
+                                    <textarea name="descricaoEquipe" class="form-control" placeholder="Descrição da equipe" aria-label="Descrição da equipe" rows="8" maxlength="500">{{ old('descricaoEquipe') }}</textarea>
+                                    @error('descricaoEquipe')
+                                    <p class='text-danger text-xs pt-1'>{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="flex flex-col mb-3">
-                                    <input type="text" name="country" class="form-control" placeholder="País" aria-label="Name" value="{{ old('country') }}" >
-                                    @error('country') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
+                                    <textarea name="descricaoProjeto" class="form-control" placeholder="Descrição do projeto" aria-label="Descrição do projeto" rows="8" maxlength="500">{{ old('descricaoProjeto') }}</textarea>
+                                    @error('descricaoProjeto')
+                                    <p class='text-danger text-xs pt-1'>{{ $message }}</p>
+                                     @enderror
                                 </div>
-                                <div class="flex flex-col mb-3">
-                                    <input type="number" name="postal" class="form-control" placeholder="CEP" aria-label="Name" value="{{ old('postal') }}" >
-                                    @error('postal') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
-                                </div>
+                            
                                 <div class="flex flex-col mb-3">
                                     <select name="clientType" id="clientType" class="form-control" aria-label="clientType">
                                         <option value="0">Selecione</option>
