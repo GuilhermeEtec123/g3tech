@@ -6,9 +6,15 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function show()
+    
+    public function index()
     {
         return view('pages.projects');
+    }
+
+    public function show()
+    {
+        return view('pages.project');
     }
 
     public function create()

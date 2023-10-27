@@ -17,6 +17,9 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    const CREATED_AT = 'dt_create';
+    const UPDATED_AT = 'dt_update';
+    
     protected $fillable = [
         'username',
         'firstname',

@@ -35,7 +35,12 @@ use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;  
 use App\Http\Controllers\ProjectController;           
-            
+
+//Modelo de rota com autenticação de usuario
+// Route::get('/profile', [UserProfileController::class, 'show'])
+//     ->middleware('App\Http\Middleware\ClientType:1') // Use o nome completo do middleware e o valor 1
+//     ->name('profile');
+
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
 	Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
@@ -47,8 +52,12 @@ Route::get('/', function () {return redirect('/dashboard');})->middleware('auth'
 	Route::get('/change-password', [ChangePassword::class, 'show'])->middleware('guest')->name('change-password');
 	Route::post('/change-password', [ChangePassword::class, 'update'])->middleware('guest')->name('change.perform');
 	Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('auth');
-	Route::get('/projects', [ProjectController::class, 'show'])->name('projects')->middleware();
+	
+	// Projeto
+	Route::get('/projects', [ProjectController::class, 'index'])->name('projects')->middleware();
 	Route::get('/new-project', [ProjectController::class, 'create'])->name('new-project')->middleware();
+	Route::get('/projeto', [ProjectController::class, 'show'])->name('project')->middleware();
+	
 	Route::group(['middleware' => 'auth'], function () {
 	Route::get('/virtual-reality', [PageController::class, 'vr'])->name('virtual-reality');
 	Route::get('/rtl', [PageController::class, 'rtl'])->name('rtl');
@@ -59,4 +68,5 @@ Route::get('/', function () {return redirect('/dashboard');})->middleware('auth'
 	Route::get('/sign-up-static', [PageController::class, 'signup'])->name('sign-up-static'); 
 	Route::get('/{page}', [PageController::class, 'index'])->name('page');
 	Route::post('logout', [LoginController::class, 'logout'])->name('logout');
+	
 });
