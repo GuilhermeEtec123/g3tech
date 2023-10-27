@@ -34,7 +34,9 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;  
-use App\Http\Controllers\ProjectController;           
+use App\Http\Controllers\ProjectController;   
+use App\Http\Controllers\TeamController;  
+use App\Http\Controllers\TeamJoinRequestController;      
 
 //Modelo de rota com autenticação de usuario
 // Route::get('/profile', [UserProfileController::class, 'show'])
@@ -58,6 +60,14 @@ Route::get('/', function () {return redirect('/dashboard');})->middleware('auth'
 	Route::get('/new-project', [ProjectController::class, 'create'])->name('new-project')->middleware();
 	Route::get('/projeto', [ProjectController::class, 'show'])->name('project')->middleware();
 	
+	//Equipe
+	Route::get('/team', [TeamController::class, 'index'])->name('index')->middleware();
+	//solicitacoes
+	Route::get('/solicitacoes', [TeamJoinRequestController::class, 'index'])->name('index')->middleware();
+	Route::get('/solicitacoes/aceitar/{id}', [TeamJoinRequestController::class, 'aceitar'])->name('solicitacoes.aceitar');
+	Route::get('/solicitacoes/rejeitar/{id}', [TeamJoinRequestController::class, 'rejeitar'])->name('solicitacoes.rejeitar');
+
+
 	Route::group(['middleware' => 'auth'], function () {
 	Route::get('/virtual-reality', [PageController::class, 'vr'])->name('virtual-reality');
 	Route::get('/rtl', [PageController::class, 'rtl'])->name('rtl');
