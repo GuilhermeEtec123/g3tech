@@ -131,6 +131,7 @@
                         <hr class="horizontal dark">
                         <p class="text-uppercase text-sm">Currículo</p>
                         <div class="row">
+
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">About me</label>
@@ -138,6 +139,7 @@
                                         value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source.">
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
