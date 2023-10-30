@@ -1,3 +1,5 @@
+
+
 <p>Criado por: {{ $projeto->cliente->firstname }} {{ $projeto->cliente->lastname }}</p>
 
 <p>{{$projeto->titulo}}</p>
