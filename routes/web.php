@@ -43,7 +43,7 @@ use App\Http\Controllers\TeamJoinRequestController;
 //     ->middleware('App\Http\Middleware\ClientType:1') // Use o nome completo do middleware e o valor 1
 //     ->name('profile');
 
-
+Route::get('/perfil', function () {return view('pages.profile-freelancer');})->middleware('auth');
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
 	Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 	Route::post('/register', [RegisterController::class, 'store'])->middleware('guest')->name('register.perform');

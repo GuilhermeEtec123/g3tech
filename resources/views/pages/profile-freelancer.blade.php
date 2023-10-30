@@ -118,27 +118,84 @@
                             </div>
                         </div>
                         <hr class="horizontal dark">
-                        <p class="text-uppercase text-sm">About me</p>
+                        <p class="text-uppercase text-sm">Sobre mim</p>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">About me</label>
-                                    <input class="form-control" type="text"
-                                        value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source.">
+                                    <label for="example-text-input" class="form-control-label">Sobre mim</label>
+                                    <textarea name="sobreMim" class="form-control" placeholder="Sobre mim" aria-label="Sobre mim" rows="5" maxlength="500">{{ old('sobreMim') }}</textarea>
                                 </div>
                             </div>
                         </div>
+                        
                         <hr class="horizontal dark">
                         <p class="text-uppercase text-sm">Currículo</p>
                         <div class="row">
-
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">About me</label>
-                                    <input class="form-control" type="text"
-                                        value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source.">
+                                    <label for="example-text-input" class="form-control-label">Resumo de minha experiência profissional</label>
+                                    <textarea name="resumoExperienciaProfissional" class="form-control" placeholder="Resumo de minha experiência profissional" aria-label="Resumo de minha experiência profissional" rows="5" maxlength="500">{{ old('resumoExperienciaProfissional') }}</textarea>
                                 </div>
                             </div>
+
+
+
+                            <hr class="horizontal dark">
+                            <p class="text-uppercase text-sm">Habilidades</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Selecione suas habilidades:</label>
+                                        <ul class="skill-options">
+                                            <li>
+                                                <label for="habilidadeDesenvolvimentoWeb">Desenvolvimento Web</label>
+                                            </li>
+                                            <li>
+                                                <label for="habilidadeEscritaWeb">Escrita para Web</label>
+                                            </li>
+                                            <li>
+                                                <label for="habilidadeEstrategiaMarketing">Estratégia de Marketing</label>
+                                            </li>
+                                            <li>
+                                                <label for="habilidadeEstrategiaNegocios">Estratégia de Negócios</label>
+                                            </li>
+                                            <li>
+                                                <label for="habilidadeGerenciamentoVendas">Gerenciamento de Vendas</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <hr class="horizontal dark">
+                            <p class="text-uppercase text-sm">Áreas de interesse</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Selecione suas áreas de interesse:</label>
+                                        <ul class="skill-options">
+                                            <li>
+                                                <label for="habilidadeDesenvolvimentoWeb">Desenvolvimento Web</label>
+                                            </li>
+                                            <li>
+                                                <label for="habilidadeEscritaWeb">Escrita para Web</label>
+                                            </li>
+                                            <li>
+                                                <label for="habilidadeEstrategiaMarketing">Estratégia de Marketing</label>
+                                            </li>
+                                            <li>
+                                                <label for="habilidadeEstrategiaNegocios">Estratégia de Negócios</label>
+                                            </li>
+                                            <li>
+                                                <label for="habilidadeGerenciamentoVendas">Gerenciamento de Vendas</label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                 
+
 
                         </div>
                     </div>

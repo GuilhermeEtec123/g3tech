@@ -24866,3 +24866,25 @@ pre[class*=language-] {
     overflow: auto !important;
   }
 }
+
+
+
+.skill-options {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill-options li {
+  list-style: none; /* Remove as bolinhas da lista */
+  margin-right: 10px; /* Espaçamento entre as opções */
+}
+
+.skill-options label {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Cor de fundo azul */
+  color: #fff; /* Cor do texto branca */
+  border: 1px solid #007bff; /* Borda da mesma cor do fundo */
+  border-radius: 4px;
+  cursor: pointer;
+}
