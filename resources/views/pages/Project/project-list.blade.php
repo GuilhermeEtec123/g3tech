@@ -34,7 +34,7 @@
                             <h6 class="mb-2">{{$projeto->titulo}}</h6>
                         </div>
                     </div>
-
+ 
                     <div class="table-responsive">
                         <table class="table align-items-center ">
                             <tbody>

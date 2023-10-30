@@ -4,4 +4,4 @@
 
 <p>{{$projeto->titulo}}</p>
 <p> {{$projeto->orcamento}}</p>
-<p>Descrição: {{ $projeto->descricao }}</p>
+<p>Descrição: {{ $projeto->descricao }}</p> 

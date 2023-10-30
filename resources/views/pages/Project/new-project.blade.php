@@ -30,7 +30,7 @@
                                 <div class="flex flex-col mb-3">
                                     <input type="text" name="titulo" class="form-control" placeholder="Nome do projeto" aria-label="Nome do projeto" value="{{ old('titulo') }}" >
                                     @error('titulo') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
-                                </div>
+                                </div> 
                                 <div class="flex flex-col mb-3">
                                     <input type="number" name="qtdprestadores" class="form-control" placeholder="Quantidade de prestadores" aria-label="Quantidade de prestadores" value="{{ old('qtdprestadores') }}">
                                     @error('qtdprestadores') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
