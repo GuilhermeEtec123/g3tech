@@ -45,6 +45,7 @@ class ProjetoController extends Controller
 
     public function show($id)
     {
+        
         $projeto = ProjetoModel::find($id);
         $projeto = ProjetoModel::with('cliente')->find($id);
         if ($projeto) {
