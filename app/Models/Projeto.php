@@ -13,7 +13,7 @@ class Projeto extends Model
         // 'categoria',
         'orcamento',
         // 'status',
-        'prazo',
+        'prazo', 
         'qtdprestadores'
         // 'habilidades_necessarias',
         // 'numero_membros_equipe_desejado',
