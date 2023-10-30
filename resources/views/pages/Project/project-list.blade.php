@@ -24,7 +24,7 @@
     </div>
     <div class="row mt-4">
         <div class="col-lg-12 mb-lg-0 mb-4">
-            @foreach ($projetos as $projeto)
+            @foreach ($projetos as $projeto) 
 
                 <div class="card mb-4">
                     <a href="{{ route('project', ['id' => $projeto->id]) }}">
