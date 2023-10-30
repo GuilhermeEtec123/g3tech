@@ -17,7 +17,9 @@ return new class extends Migration
             $table->unsignedBigInteger('cliente_id');
             $table->string('titulo');
             $table->text('descricao');
+            $table->unsignedBigInteger('prazo');
             $table->decimal('orcamento', 10, 2);
+            $table->unsignedBigInteger('qtdPrestadores');
             // $table->string('categoria');
             // $table->date('data_criacao');
             $table->date('data_atual')->default(DB::raw('CURRENT_DATE'));
