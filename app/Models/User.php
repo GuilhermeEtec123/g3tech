@@ -29,7 +29,7 @@ class User extends Authenticatable
         'postal',
         'about',
         'clientType',
-        'freelancerType'
+        'freelancerType' 
     ];
 
     /**
