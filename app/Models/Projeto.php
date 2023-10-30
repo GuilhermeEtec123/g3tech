@@ -36,4 +36,8 @@ class Projeto extends Model
     //     return $this->belongsToMany(Freelancer::class, 'equipes', 'projeto_id', 'membro_id')
     //         ->withPivot('cargo_equipe');
     // }
+    public function cliente()
+    {
+        return $this->belongsTo(User::class, 'cliente_id');
+    }
 }

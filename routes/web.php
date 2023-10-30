@@ -33,9 +33,10 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
-use App\Http\Controllers\ChangePassword;  
+use App\Http\Controllers\ChangePassword;
+use App\Http\Controllers\EquipeController;
 use App\Http\Controllers\ProjetoController;   
-use App\Http\Controllers\TeamController;  
+use App\Http\Controllers\EquipeControllerController;  
 use App\Http\Controllers\TeamJoinRequestController;      
 
 //Modelo de rota com autenticação de usuario
@@ -55,17 +56,18 @@ Route::get('/', function () {return redirect('/dashboard');})->middleware('auth'
 	Route::post('/change-password', [ChangePassword::class, 'update'])->middleware('guest')->name('change.perform');
 	Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('auth');
 	
-	// Projeto
+	// Projeto	
 	Route::get('/projects', [ProjetoController::class, 'index'])->name('list-project')->middleware();
+	Route::get('/projetos/{id}', [ProjetoController::class, 'show'])->name('project')->middleware('auth');
 	Route::get('/new-project', [ProjetoController::class, 'create'])->name('new-project')->middleware('auth');
 	Route::post('/new-project', [ProjetoController::class, 'store'])->name('new-project')->middleware();
 	// Route::get('/projetos/{projeto}', [ProjetoController::class, 'show'])->name('project')->middleware();
-	// Route::get('/projetos/{id}', [ProjetoController::class, 'show'])->name('project');
-	Route::get('/projetos/{projeto}', [ProjetoController::class, 'show'])->name('project');
+	// Route::get('/projetos/{id}', [ProjetoController::class, 'show'])->name('project')->middleware('auth');;
+	// Route::get('/projetos/{projeto}', [ProjetoController::class, 'show'])->name('project');
 
 	
 	//Equipe
-	Route::get('/team', [TeamController::class, 'index'])->name('index')->middleware();
+	Route::get('/team', [EquipeController::class, 'index'])->name('index')->middleware();
 
 	//solicitacoes
 	Route::get('/solicitacoes', [TeamJoinRequestController::class, 'index'])->name('index')->middleware();
