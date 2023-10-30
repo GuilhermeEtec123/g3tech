@@ -34,7 +34,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;  
-use App\Http\Controllers\ProjectController;   
+use App\Http\Controllers\ProjetoController;   
 use App\Http\Controllers\TeamController;  
 use App\Http\Controllers\TeamJoinRequestController;      
 
@@ -56,12 +56,17 @@ Route::get('/', function () {return redirect('/dashboard');})->middleware('auth'
 	Route::get('/dashboard', [HomeController::class, 'index'])->name('home')->middleware('auth');
 	
 	// Projeto
-	Route::get('/projects', [ProjectController::class, 'index'])->name('projects')->middleware();
-	Route::get('/new-project', [ProjectController::class, 'create'])->name('new-project')->middleware();
-	Route::get('/projeto', [ProjectController::class, 'show'])->name('project')->middleware();
+	Route::get('/projects', [ProjetoController::class, 'index'])->name('list-project')->middleware();
+	Route::get('/new-project', [ProjetoController::class, 'create'])->name('new-project')->middleware('auth');
+	Route::post('/new-project', [ProjetoController::class, 'store'])->name('new-project')->middleware();
+	// Route::get('/projetos/{projeto}', [ProjetoController::class, 'show'])->name('project')->middleware();
+	// Route::get('/projetos/{id}', [ProjetoController::class, 'show'])->name('project');
+	Route::get('/projetos/{projeto}', [ProjetoController::class, 'show'])->name('project');
+
 	
 	//Equipe
 	Route::get('/team', [TeamController::class, 'index'])->name('index')->middleware();
+
 	//solicitacoes
 	Route::get('/solicitacoes', [TeamJoinRequestController::class, 'index'])->name('index')->middleware();
 	Route::get('/solicitacoes/aceitar/{id}', [TeamJoinRequestController::class, 'aceitar'])->name('solicitacoes.aceitar');
