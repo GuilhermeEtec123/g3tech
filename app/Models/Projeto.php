@@ -14,7 +14,8 @@ class Projeto extends Model
         'orcamento',
         // 'status',
         'prazo', 
-        'qtdprestadores'
+        'qtdprestadores',
+        'created_at'
         // 'habilidades_necessarias',
         // 'numero_membros_equipe_desejado',
         // 'cargos_equipe_desejados',
