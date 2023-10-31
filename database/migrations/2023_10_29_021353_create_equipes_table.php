@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('projeto_id');
             $table->unsignedBigInteger('membro_id');
-            $table->string('cargo_equipe');
             $table->timestamps();
         });
     }
