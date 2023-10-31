@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('qtdPrestadores');
             // $table->string('categoria');
             // $table->date('data_criacao');
-            $table->date('data_atual')->default(DB::raw('CURRENT_DATE'));
+            // $table->date('data_atual')->default(DB::raw('CURRENT_DATE'));
             // $table->string('status');
             // $table->text('habilidades_necessarias');
             // $table->integer('numero_membros_equipe_desejado');
