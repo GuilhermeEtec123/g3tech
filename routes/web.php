@@ -67,7 +67,7 @@ Route::get('/', function () {return redirect('/dashboard');})->middleware('auth'
 
 	
 	//Equipe
-	Route::get('/team', [EquipeController::class, 'index'])->name('index')->middleware();
+	Route::get('/team', [EquipeController::class, 'index'])->name('team')->middleware();
 
 	//solicitacoes
 	Route::get('/solicitacoes', [TeamJoinRequestController::class, 'index'])->name('index')->middleware();
