@@ -45,6 +45,7 @@ use App\Http\Controllers\TeamJoinRequestController;
 //     ->name('profile');
 
 Route::get('/perfil', function () {return view('pages.profile-freelancer');})->middleware('auth');
+Route::get('/solicitacao', function () {return view('pages.Team.solicitacao');})->middleware('auth');
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
 	Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 	Route::post('/register', [RegisterController::class, 'store'])->middleware('guest')->name('register.perform');
