@@ -61,13 +61,14 @@ Route::get('/', function () {return redirect('/dashboard');})->middleware('auth'
 	Route::get('/projetos/{id}', [ProjetoController::class, 'show'])->name('project')->middleware('auth');
 	Route::get('/new-project', [ProjetoController::class, 'create'])->name('new-project')->middleware('auth');
 	Route::post('/new-project', [ProjetoController::class, 'store'])->name('new-project')->middleware();
+	Route::delete('/projetos/{id}', [ProjetoController::class, 'destroy'])->name('destroy')->middleware('auth');
 	// Route::get('/projetos/{projeto}', [ProjetoController::class, 'show'])->name('project')->middleware();
 	// Route::get('/projetos/{id}', [ProjetoController::class, 'show'])->name('project')->middleware('auth');;
 	// Route::get('/projetos/{projeto}', [ProjetoController::class, 'show'])->name('project');
 
 	
 	//Equipe
-	Route::get('/team', [EquipeController::class, 'index'])->name('index')->middleware();
+	Route::get('/team', [EquipeController::class, 'index'])->name('team')->middleware();
 
 	//solicitacoes
 	Route::get('/solicitacoes', [TeamJoinRequestController::class, 'index'])->name('index')->middleware();
