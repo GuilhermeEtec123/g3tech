@@ -78,10 +78,15 @@ class ProjetoController extends Controller
         return redirect()->route('list-project');
     }
 
-    public function destroy(ProjetoModel $projeto)
+    public function destroy($id)
     {
+        $projeto=ProjetoModel::find($id);
+
         $projeto->delete();
 
-        return redirect()->route('pages.Project.index');
+        return redirect()->route('list-project');
+
+        // return view('pages.Projects.project-list', ['projeto'=>$projeto]);
+
     }
 }

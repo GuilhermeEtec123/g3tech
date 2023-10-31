@@ -32,6 +32,16 @@
                     <div class="card-header pb-0 p-3">
                         <div class="d-flex justify-content-between">
                             <h6 class="mb-2">{{$projeto->titulo}}</h6>
+                            <form action="/projetos/{{$projeto->id }}" method="post">
+                                @csrf
+                                @method('delete')
+                                <button type="submit ">Excluir</button>
+                            </form>
+                            <form action="{{ route('send-request', ['recipient_id' => $recipient->id]) }}" method="POST">
+                                @csrf
+                                <button type="submit">Enviar Solicitação de Perfil</button>
+                            </form>
+
                         </div>
                     </div>
  
@@ -39,7 +49,7 @@
                         <table class="table align-items-center ">
                             <tbody>
                                 <tr>
-                                    <td     >
+                                    <td>
                                         <div class="d-flex px-2 py-1 align-items-center">
                                             <div class="ms-4">
                                                 <p class="text-xs font-weight-bold mb-0">Prazo:</p>
@@ -48,7 +58,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td     >
+                                    <td>
                                         <div class="d-flex px-2 py-1 align-items-center">
                                             <div class="ms-4">
                                                 <p class="text-xs font-weight-bold mb-0">Categoria:</p>
@@ -90,7 +100,6 @@
                                                 <i class="fas fa-users"></i>
                                                 <h6 class="text-sm mb-0 ms-2 text-cente ">{{$projeto->qtdPrestadores}}</h6>
                                             </div>
-                                            
 
                                         </div>
 
