@@ -37,11 +37,6 @@
                                 @method('delete')
                                 <button type="submit ">Excluir</button>
                             </form>
-                            <form action="{{ route('send-request', ['recipient_id' => $recipient->id]) }}" method="POST">
-                                @csrf
-                                <button type="submit">Enviar Solicitação de Perfil</button>
-                            </form>
-
                         </div>
                     </div>
  
