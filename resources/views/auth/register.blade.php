@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="flex flex-col mb-3">
                                     <select name="clientType" id="clientType" class="form-control" aria-label="clientType">
-                                        <option value="0">Selecione</option>
+                                        <option disabled selected>Selecione</option>
                                         <option value="1">Demandante</option>
                                         <option value="2">Freelancer</option>
                                     </select>
@@ -72,15 +72,15 @@
                                 <!-- fazer um if caso seja escolhido o freelancer -->
                                 <div class="flex flex-col mb-3">
                                     <select name="freelancerType" id="freelancerType" class="form-control" aria-label="freelancerType">
-                                        <option value="0">Selecione</option>
-                                        <option value="1">Desenvolvedor Full-Stack</option>
-                                        <option value="2">Desenvolvedor Front-End</option>
-                                        <option value="3">Desenvolvedor Back-End</option>
-                                        <option value="4">Design</option>
-                                        <option value="5">Product owner</option>
-                                        <option value="6">Data Science</option>
-                                        <option value="7">Quality Assurance </option>
-                                        <option value="8">Tech Lead</option>
+                                        <option disabled selected>Selecione</option>
+                                        <option value="Desenvolvedor Full-Stack">Desenvolvedor Full-Stack</option>
+                                        <option value="Desenvolvedor Front-End">Desenvolvedor Front-End</option>
+                                        <option value="Desenvolvedor Back-End">Desenvolvedor Back-End</option>
+                                        <option value="Design">Design</option>
+                                        <option value="Product owner">Product owner</option>
+                                        <option value="Data Science">Data Science</option>
+                                        <option value="Quality Assurance">Quality Assurance</option>
+                                        <option value="Tech Lead">Tech Lead</option>
 
                                     </select>
                                     @error('freelancerType') <p class='text-danger text-xs pt-1'> {{ $message }} </p> @enderror
