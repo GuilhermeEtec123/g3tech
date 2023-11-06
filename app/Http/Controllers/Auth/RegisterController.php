@@ -61,7 +61,7 @@ class RegisterController extends Controller
             'country' => ['max:100'],
             'postal' => ['max:100'],
             'about' => ['max:255'],
-            'clientType' => ['max:1'],
+            'clientType' => ['max:100'],
             'freelancerType' => ['max:100'],
         ]);
     }
