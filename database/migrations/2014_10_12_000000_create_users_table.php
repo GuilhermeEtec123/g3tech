@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('postal')->nullable();
             $table->text('about')->nullable();
-            $table->unsignedTinyInteger('clientType');
+            $table->string('clientType');
             $table->string('freelancerType');
             $table->rememberToken();
             $table->timestamps();
