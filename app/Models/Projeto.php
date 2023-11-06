@@ -13,7 +13,7 @@ class Projeto extends Model
         // 'categoria',
         'orcamento',
         // 'status',
-        'prazo', 
+        'prazo',
         'qtdprestadores',
         'created_at'
         // 'habilidades_necessarias',
@@ -22,23 +22,24 @@ class Projeto extends Model
         // Outros campos específicos do Projeto
     ];
 
-    // public function cliente()
-    // {
-    //     return $this->belongsTo(Cliente::class, 'cliente_id');
-    // }
+    public static $rules = [
+        'titulo' => 'required',
+        'descricao' => 'required',
+        'orcamento' => 'numeric',
+        'prazo' => 'integer',
+        'qtdprestadores' => 'integer',
+        // Adicione outras regras de validação conforme necessário
+    ];
 
-    // public function equipe()
-    // {
-    //     return $this->hasMany(Equipe::class, 'projeto_id');
-    // }
+    public function equipe()
+    {
+        return $this->hasMany(Equipe::class, 'projeto_id');
+    }
 
-    // public function freelancers()
-    // {
-    //     return $this->belongsToMany(Freelancer::class, 'equipes', 'projeto_id', 'membro_id')
-    //         ->withPivot('cargo_equipe');
-    // }
-    public function cliente() 
-        {
-            return $this->belongsTo(User::class, 'cliente_id');
-        }
+    public function cliente()
+    {
+        return $this->belongsTo(User::class, 'cliente_id');
+    }
+
+    
 }

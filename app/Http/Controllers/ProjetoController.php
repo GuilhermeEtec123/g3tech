@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Projeto as projetoModel;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Equipe as EquipeModel;
 
 
 class ProjetoController extends Controller
@@ -23,24 +24,31 @@ class ProjetoController extends Controller
 
     public function store(Request $request)
     {
+
+
+        $request->validate(ProjetoModel::$rules);
         $clienteId = Auth::id();
         $projeto = new ProjetoModel();
         $projeto->cliente_id = $clienteId;
         $projeto->titulo = $request->input('titulo');
         $projeto->descricao = $request->input('descricao');
         $projeto->orcamento = $request->input('orcamento');
-        // $projeto->categoria = $request->input('categoria');
         $projeto->prazo = $request->input('prazo');
+        $projeto->qtdprestadores = $request->input('qtdprestadores');
+        // $projeto->categoria = $request->input('categoria');
         // $projeto->status = $request->input('status');
         // $projeto->habilidades_necessarias = $request->input('habilidades_necessarias');
-        $projeto->qtdprestadores = $request->input('qtdprestadores');
         // $projeto->cargos_equipe_desejados = $request->input('cargos_equipe_desejados');
         // Adicione outros campos específicos de Projeto
-        // $users = UserModel::all()->sortBy("id");
-        // dd($users);
+        // Adicione outros campos específicos de Projeto
         $projeto->save();
+        
+        $equipe = new EquipeModel();
+        $equipe->projeto_id = $projeto->id; // Use o ID do projeto recém-criado
+        $equipe->membro_id = Auth::id(); // ID do criador do projeto
+        $equipe->save();
 
-        return redirect()->route('list-project');
+        return redirect()->route('list-project')->with('success', 'Projeto criado com sucesso.');;
     }
 
     public function show($id)
