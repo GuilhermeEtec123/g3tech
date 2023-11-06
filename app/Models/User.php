@@ -61,4 +61,9 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($value);
     }
+    public function projeto()
+    {
+        return $this->hasOne(Projeto::class, 'cliente_id');
+    }
+    
 }
