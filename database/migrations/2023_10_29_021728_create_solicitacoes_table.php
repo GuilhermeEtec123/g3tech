@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('freelancer_id');
             $table->unsignedBigInteger('team_id');
-            $table->enum('status', ['pending', 'accepted', 'rejected'])->default('pending');
+            
+            $table->enum('status', ['pendente', 'aceito', 'rejeitado'])->default('pendente');
             $table->timestamps();
         });
     }
