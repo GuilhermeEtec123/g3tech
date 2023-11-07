@@ -32,18 +32,25 @@
                     <div class="card-header pb-0 p-3">
                         <div class="d-flex justify-content-between">
                             <h6 class="mb-2">{{$projeto->titulo}}</h6>
-                            <form action="/projetos/{{ $projeto->id }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <button type="submit ">Excluir</button>
-                            </form>
-                            <form action="{{ route('team-join-requests.store', ['projetoId' => $projeto->id]) }}" method="post">
-                                @csrf
-                                @method('post')
-                                <input type="hidden" name="freelancer_id" value="{{ Auth::id() }}">
-                                
-                                <button type="submit" class="btn btn-primary">Enviar Solicitação</button>
-                            </form>
+
+                            @if(Auth::user()->clientType == 2)
+                                <form action="{{ route('team-join-requests.store', ['projetoId' => $projeto->id]) }}" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <input type="hidden" name="freelancer_id" value="{{ Auth::id() }}">
+                                    <button type="submit" class="btn btn-primary">Enviar Solicitação</button>
+                                </form>
+                            @endif
+
+                            @if(Auth::user()->clientType == 1)
+                                <form action="{{ route('team-join-requests.store', ['projetoId' => $projeto->id]) }}" method="post">
+                                    @csrf
+                                    @method('post')
+                                    <input type="hidden" name="freelancer_id" value="{{ Auth::id() }}">
+                                    <button type="submit" class="btn btn-primary">Excluir</button>
+                                </form>
+                            @endif
+
 
                         </div>
                     </div>
