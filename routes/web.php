@@ -85,6 +85,7 @@ Route::delete('/projetos/{id}', [ProjetoController::class, 'destroy'])->name('de
 
 //Equipe
 Route::get('/team', [EquipeController::class, 'index'])->name('team')->middleware();
+Route::delete('/', [ProjetoController::class, 'destroy'])->name('destroy')->middleware('auth');
 
 
 

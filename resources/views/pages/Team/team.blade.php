@@ -49,8 +49,23 @@
                                 </td>
                                 <td class="align-middle text-end">
                                     <div class="d-flex px-3 py-1 justify-content-center align-items-center">
-                                        <p class="text-sm font-weight-bold mb-0">Edit</p>
-                                        <p class="text-sm font-weight-bold mb-0 ps-2">Delete</p>
+                                    @if(Auth::user()->clientType == 1 || Auth::user()->freelancerType == 'Product owner')
+                                        <form action="{{ route('team-join-requests.store', ['projetoId' => $projeto->id]) }}" method="post">
+                                            @csrf
+                                            @method('post')
+                                            <input type="hidden" name="freelancer_id" value="{{ Auth::id() }}">
+                                            <button type="submit" class="btn btn-primary">Editar</button>
+                                        </form>
+                                    @endif
+
+                                    @if(Auth::user()->clientType == 1 || Auth::user()->freelancerType == 'Product owner')
+                                        <form action="{{ route('team-join-requests.store', ['projetoId' => $projeto->id]) }}" method="post">
+                                            @csrf
+                                            @method('post')
+                                            <input type="hidden" name="freelancer_id" value="{{ Auth::id() }}">
+                                            <button type="submit" class="btn">Excluir</button>
+                                        </form>
+                                    @endif
                                     </div>
                                 </td>
                             </tr>
