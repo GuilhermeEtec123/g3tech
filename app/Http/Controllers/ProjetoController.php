@@ -53,14 +53,13 @@ class ProjetoController extends Controller
 
     public function show($id)
     {
-        
-        $projeto = ProjetoModel::find($id);
+        // $projeto = ProjetoModel::find($id);
         $projeto = ProjetoModel::with('cliente')->find($id);
         if ($projeto) {
-            return view('pages.Project.project', ['projeto' => $projeto]);
-        } else {
-            return redirect()->route('project');
-        }
+            return view('pages.Project.project_2', ['projeto' => $projeto]);
+        } 
+        
+        return redirect()->route('project');
     }
 
     public function edit(ProjetoModel $projeto)

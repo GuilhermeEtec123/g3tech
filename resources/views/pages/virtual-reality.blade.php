@@ -145,7 +145,7 @@
                                                             class="avatar avatar-sm border-0 rounded-circle"
                                                             data-bs-toggle="tooltip" data-bs-placement="top"
                                                             title="1 New Message">
-                                                            <img alt="Image placeholder" src="/img/team-2.jpg">
+                                                            <img alt="Image placeholder" src="{{ asset('img/team-2.jpg') }}">
                                                         </a>
                                                         <a href="javascript:;"
                                                             class="avatar avatar-sm border-0 rounded-circle"
