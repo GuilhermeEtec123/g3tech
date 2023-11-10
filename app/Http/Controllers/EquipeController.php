@@ -13,40 +13,34 @@ class EquipeController extends Controller
     {
         // Recupere o usuário autenticado
         $user = Auth::user();
-    
+
         // Inicialize uma variável para armazenar o projeto associado ao usuário
-        $projeto = null;
-    
+        $projetos = [];
+
         // Inicialize um array para armazenar os membros da equipe associados ao projeto
         $membros = [];
-    
+
         // Recupere todas as equipes às quais o usuário pertence
         $equipes = Equipe::where('membro_id', $user->id)->get();
-    
+
         // Itere sobre as equipes para encontrar o projeto associado
         foreach ($equipes as $equipe) {
             if ($equipe->projeto) {
                 // Se a equipe estiver associada a um projeto, atribua o projeto à variável $projeto
-                $projeto = $equipe->projeto;
-    
+                $projetos[] = $equipe->projeto;
+
                 // Recupere os membros da equipe associados a esse projeto
-                $equipesDoProjeto = Equipe::where('projeto_id', $projeto->id)->get();
+                $equipesDoProjeto = Equipe::where('projeto_id', $equipe->projeto->id)->get();
+                $membrosPorProjeto[$equipe->projeto->id] = [];
                 foreach ($equipesDoProjeto as $equipeDoProjeto) {
                     $membro = User::find($equipeDoProjeto->membro_id);
-                    $membros[] = $membro;
+                    $membrosPorProjeto[$equipe->projeto->id][] = $membro;
                 }
-    
-                // Saia do loop, pois já encontrou o projeto associado
-                break;
             }
         }
-    
-        return view('pages.Team.team', compact('projeto', 'membros'));
+
+        return view('pages.Team.team', compact('projetos', 'membrosPorProjeto'));
     }
-    
-
-
-
 
     public function create()
     {
@@ -83,13 +77,20 @@ class EquipeController extends Controller
         // Atualize outros campos específicos de Equipe
         $equipe->save();
 
-        return redirect()->route('equipes.index');
+        return redirect()->route('team');
     }
 
-    public function destroy(Equipe $equipe)
-    {
-        $equipe->delete();
+    // EquipeController.php
 
-        return redirect()->route('equipes.index');
+    public function removeParticipante($membroId)
+    {
+        $equipe = Equipe::where('membro_id', $membroId)->first();
+
+        if ($equipe) {
+            $equipe->delete();
+            return redirect()->route('team')->with('success', 'Participante removido da equipe com sucesso.');
+        }
+
+        return redirect()->route('team')->with('error', 'Erro ao remover participante da equipe.');
     }
 }
