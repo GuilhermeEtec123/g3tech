@@ -138,15 +138,12 @@
                             </a>
                         </li>
                         <div>
-                            
-                            <!-- <span>GABRIEL MINZON -</span>
-                            <span>ANALISTA</span> <br>
-                            <span>GABRIEL MINZON -</span>
-                            <span>ANALISTA</span> <br>
-                            <span>GABRIEL MINZON -</span>
-                            <span>ANALISTA</span> <br>
-                            <span>GABRIEL MINZON -</span>
-                            <span>ANALISTA</span> -->
+                            <ul>
+                                {{-- @foreach ($membros as $membro) --}}
+                                    <li>prestadores "NOME - Função"</li>
+                                    {{-- <!-- Substitua 'nome' pelo campo que representa o nome do membro em seu modelo User -->
+                                @endforeach --}}
+                            </ul>
                         </div>
                     </div>
                     <hr>
