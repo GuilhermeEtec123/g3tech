@@ -9,16 +9,10 @@
             <div class="col-auto my-auto">
                 <div class="h-100">
                     <h5 class="mb-1">
-                        <p>{{$projeto->titulo}}</p>
-                       <p> {{$projeto->orcamento}}</p>
-                        <p>Descrição: {{ $projeto->descricao }}</p>
-
-                        <!-- Nome do criador do projeto -->
-                        
-                        <p>Criado por: {{ $projeto->cliente->firstname }} {{ $projeto->cliente->lastname }}</p>
+                        {{$projeto->titulo}}
                     </h5>
                     <p class="mb-0 font-weight-bold text-sm">
-                        Demandante: Gabriel Minzon<!-- Retornar dados do Demandante (nome, tel e email) -->
+                        Criado por: {{ $projeto->cliente->firstname }} {{ $projeto->cliente->lastname }}
                     </p>
                 </div>
             </div>
@@ -69,14 +63,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">Username</label>
-                                    <input disabled class="form-control  disable" type="text" name="username" value="{{ old('username', auth()->user()->username) }}">
+                                    <label for="example-text-input" class="form-control-label">Descrição:</label>
+                                    <p class="form-control">{{ $projeto->descricao }}</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Email address</label>
-                                    <input class="form-control" type="email" name="email" value="{{ old('email', auth()->user()->email) }}">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -145,14 +138,15 @@
                             </a>
                         </li>
                         <div>
-                            <span>GABRIEL MINZON -</span>
+                            
+                            <!-- <span>GABRIEL MINZON -</span>
                             <span>ANALISTA</span> <br>
                             <span>GABRIEL MINZON -</span>
                             <span>ANALISTA</span> <br>
                             <span>GABRIEL MINZON -</span>
                             <span>ANALISTA</span> <br>
                             <span>GABRIEL MINZON -</span>
-                            <span>ANALISTA</span>
+                            <span>ANALISTA</span> -->
                         </div>
                     </div>
                     <hr>
@@ -164,8 +158,7 @@
                             </a>
                         </li>
                         <div>
-                            <span>Preço</span><br>
-                            <span>R$ 10.000,00</span>
+                            <p>R$ {{$projeto->orcamento}}</p>
                         </div>
                     </div>
                 </ul>
