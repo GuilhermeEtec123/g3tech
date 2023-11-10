@@ -11,16 +11,25 @@ use Illuminate\Support\Facades\Auth;
 
 class TeamJoinRequestController extends Controller
 {
-
     public function index()
     {
-        $solicitacoesPendentes = TeamJoinRequestModel::where('status', 'pendente')
-            ->with('freelancer') // Carregue os dados do freelancer
-            ->get();   
+        $user = auth()->user();
+        
+        if ($user->clientType === 1) {
+            // Se for um demandante, mostra todas as solicitações pendentes
+            $solicitacoesPendentes = TeamJoinRequestModel::where('status', 'pendente')
+                ->with(['freelancer', 'equipe.projeto']) // Carregue os dados do freelancer e do projeto associado à equipe
+                ->get();
+        } else {
+            // Se for um freelancer, mostra apenas as solicitações que ele enviou
+            $solicitacoesPendentes = TeamJoinRequestModel::where('freelancer_id', $user->id)
+                ->with(['freelancer', 'equipe', 'equipe.projeto']) // Carregue os dados do freelancer e do projeto associado à equipe
+                ->get();
+        }
+    
         return view('pages.Team.solicitacao', ['solicitacoesPendentes' => $solicitacoesPendentes]);
     }
     
-
     public function show()
     {
         $solicitacoesPendentes = TeamJoinRequestModel::orderBy('created_at', 'desc')->get();
@@ -72,12 +81,12 @@ class TeamJoinRequestController extends Controller
             $teamId = $solicitacao->team_id;
 
             // Obtenha o ID do freelancer da solicitação
-            $freelancerId = $solicitacao->user_id;
+            $freelancerId = $solicitacao->freelancer_id;
 
             // Crie um novo registro na tabela de equipes para associar o freelancer à equipe
             $equipe = new EquipeModel();
             $equipe->projeto_id = $teamId; // Defina o ID do projeto, se aplicável
-            $equipe->membro_id = Auth::id();
+            $equipe->membro_id = $freelancerId;
             // $equipe->cargo_equipe = 'Membro'; // Defina o cargo conforme necessário
             $equipe->save();
             // Implemente a lógica para associar o ClienteFreelancer à equipe correspondente
@@ -98,4 +107,6 @@ class TeamJoinRequestController extends Controller
         }
         return redirect()->route('solicitacoes')->with('error', 'Solicitação não encontrada.');
     }
+
+  
 }

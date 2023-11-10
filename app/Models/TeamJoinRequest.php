@@ -28,5 +28,8 @@ class TeamJoinRequest extends Model
     {
         return $this->belongsTo(User::class, 'freelancer_id', 'id');
     }
-    
+    public function projeto()
+    {
+        return $this->belongsTo(Projeto::class, 'projeto_id');
+    }
 }
