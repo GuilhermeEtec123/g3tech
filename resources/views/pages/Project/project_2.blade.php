@@ -52,12 +52,12 @@
                     @csrf
                     <div class="card-header pb-0">
                         <div class="d-flex align-items-center">
-                            <p class="mb-0">Edit Profile</p>
-                            <button type="submit" class="btn btn-primary btn-sm ms-auto">Save</button>
+                            <p class="mb-0">Dados do Projeto</p>
+                            <button type="submit" class="btn btn-primary btn-sm ms-auto">Salvar Alterações</button>
                         </div>
                     </div>
                     <div class="card-body">
-                        <p class="text-uppercase text-sm">User Information</p>
+                        <p class="text-uppercase text-sm">Informações Adicionais</p>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -67,16 +67,19 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="example-text-input" class="form-control-label">Email address</label>
+                                    <!-- <label for="example-text-input" class="form-control-label">Email address</label> -->
                                 </div>
                             </div>
+                            
                             <div class="col-md-6">
+                            <br><br><br>
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">First name</label>
                                     <input class="form-control" type="text" name="firstname" value="{{ old('firstname', auth()->user()->firstname) }}">
                                 </div>
                             </div>
                             <div class="col-md-6">
+                            <br><br><br>
                                 <div class="form-group">
                                     <label for="example-text-input" class="form-control-label">Last name</label>
                                     <input class="form-control" type="text" name="lastname" value="{{ old('lastname', auth()->user()->lastname) }}">
@@ -138,7 +141,8 @@
                         <div>
                             <ul>
                                 {{-- @foreach ($membros as $membro) --}}
-                                    <li>prestadores "NOME - Função"</li>
+                                    <li>Guilherme Serafim - Product Owner</li>
+                                    <li>Guilherme Teixeira - Desenvolvedor Full-Stack</li>
                                     {{-- <!-- Substitua 'nome' pelo campo que representa o nome do membro em seu modelo User -->
                                 @endforeach --}}
                             </ul>
