@@ -6,14 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\Projeto as projetoModel;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Equipe as EquipeModel;
+use App\Models\User;
 
 
 class ProjetoController extends Controller
 {
     public function index()
     {
-        $projetos = ProjetoModel::orderBy('created_at', 'desc')->get();
-        return view('pages.Project.project-list',compact('projetos'));
+        $user = auth()->user();
+    
+        if ($user->clientType === 1) {
+            $projetos = ProjetoModel::where('cliente_id', $user->id)->orderBy('created_at', 'desc')->get();
+        } else {
+            $projetos = ProjetoModel::orderBy('created_at', 'desc')->get();
+        }
+    
+        return view('pages.Project.project-list', compact('projetos'));
     }
 
     public function create()
@@ -24,8 +32,6 @@ class ProjetoController extends Controller
 
     public function store(Request $request)
     {
-
-
         $request->validate(ProjetoModel::$rules);
         $clienteId = Auth::id();
         $projeto = new ProjetoModel();
@@ -45,7 +51,7 @@ class ProjetoController extends Controller
         
         $equipe = new EquipeModel();
         $equipe->projeto_id = $projeto->id; // Use o ID do projeto recém-criado
-        $equipe->membro_id = Auth::id(); // ID do criador do projeto
+        $equipe->membro_id = $clienteId;; // ID do criador do projeto
         $equipe->save();
 
         return redirect()->route('list-project')->with('success', 'Projeto criado com sucesso.');;
@@ -58,7 +64,7 @@ class ProjetoController extends Controller
         if ($projeto) {
             return view('pages.Project.project_2', ['projeto' => $projeto]);
         } 
-        
+
         return redirect()->route('project');
     }
 
@@ -93,7 +99,6 @@ class ProjetoController extends Controller
 
         return redirect()->route('list-project');
 
-        // return view('pages.Projects.project-list', ['projeto'=>$projeto]);
 
     }
 }
