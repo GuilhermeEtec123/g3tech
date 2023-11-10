@@ -92,7 +92,7 @@
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div>
-                                                    <img src="/img/team-4.jpg" class="avatar avatar-sm me-3"
+                                                    <img src="/img/team-5.jpg" class="avatar avatar-sm me-3"
                                                         alt="user3">
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center">
@@ -182,7 +182,7 @@
                                         <td>
                                             <div class="d-flex px-2 py-1">
                                                 <div>
-                                                    <img src="/img/team-4.jpg" class="avatar avatar-sm me-3"
+                                                    <img src="/img/team-5.jpg" class="avatar avatar-sm me-3"
                                                         alt="user6">
                                                 </div>
                                                 <div class="d-flex flex-column justify-content-center">
