@@ -28,8 +28,6 @@
                                     <option value="2">Aguardando Pagamento</option>
                                     <option value="3">Em Desenvolvimento</option>
                                     <option value="4">Concluído</option>
-
-
                                 </select><br>
                             </li>
                             <li class="nav-item">
