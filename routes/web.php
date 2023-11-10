@@ -44,16 +44,12 @@ use App\Http\Controllers\TeamJoinRequestController;
 //     ->middleware('App\Http\Middleware\ClientType:1') // Use o nome completo do middleware e o valor 1
 //     ->name('profile');
 
-Route::get('/perfil', function () {
-	return view('pages.profile-freelancer');
-})->middleware('auth');
-Route::get('/solicitacao', function () {
-	return view('pages.Team.solicitacao');
-})->middleware('auth');
+Route::get('/perfil', function () {return view('pages.profile-freelancer');})->middleware('auth');
+Route::get('/solicitacao', function () {return view('pages.Team.solicitacao');})->middleware('auth');
 Route::get('/', function () {
-	return redirect('/dashboard');
-})->middleware('auth')
-	;
+    return redirect()->route('list-project');
+})->middleware('auth');
+
 Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest')->name('register.perform');
 Route::get('/login', [LoginController::class, 'show'])->middleware('guest')->name('login');
@@ -85,7 +81,7 @@ Route::delete('/projetos/{id}', [ProjetoController::class, 'destroy'])->name('de
 
 //Equipe
 Route::get('/team', [EquipeController::class, 'index'])->name('team')->middleware();
-Route::delete('/', [ProjetoController::class, 'destroy'])->name('destroy')->middleware('auth');
+Route::post('equipes/remove-participante/{membroId}', [EquipeController::class, 'removeParticipante'])->name('equipes.remove-participante');
 
 
 
